@@ -1,10 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @theme {
   --background-image-mobile: url(pattern-lines.svg), url(pattern-squiggly-line-top.svg), url(pattern-squiggly-line-bottom-mobile-tablet.svg), url(pattern-circle.svg), url(pattern-circle.svg), url(background-mobile.png);
   --background-image-tablet: url(pattern-lines.svg), url(pattern-squiggly-line-top.svg), url(pattern-squiggly-line-bottom-mobile-tablet.svg), url(pattern-circle.svg), url(pattern-circle.svg),url(background-tablet.png);
   --background-image-desktop: url(pattern-lines.svg), url(pattern-squiggly-line-top.svg), url(pattern-squiggly-line-bottom-desktop.svg), url(pattern-circle.svg), url(pattern-circle.svg), url(background-desktop.png);
+
+  --font-inc: 'Inconsolata';
 }
 
 @layer base {
@@ -20,6 +23,10 @@
     bg-[size:cover,_10rem,_25rem,_6rem,_6rem,_cover]
     md:bg-[size:cover,_20rem,_40rem,_10rem,_10rem,_cover]
     lg:bg-[size:cover,_30rem,_50rem,_14rem,_14rem,_cover];
+  }
+
+  h1 {
+    @apply text-white text-5xl flex text-center justify-center font-mono font-semibold;
   }
 
 }
