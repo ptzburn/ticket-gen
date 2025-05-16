@@ -6,8 +6,6 @@
   --background-image-mobile: url(pattern-lines.svg), url(pattern-squiggly-line-top.svg), url(pattern-squiggly-line-bottom-mobile-tablet.svg), url(pattern-circle.svg), url(pattern-circle.svg), url(background-mobile.png);
   --background-image-tablet: url(pattern-lines.svg), url(pattern-squiggly-line-top.svg), url(pattern-squiggly-line-bottom-mobile-tablet.svg), url(pattern-circle.svg), url(pattern-circle.svg),url(background-tablet.png);
   --background-image-desktop: url(pattern-lines.svg), url(pattern-squiggly-line-top.svg), url(pattern-squiggly-line-bottom-desktop.svg), url(pattern-circle.svg), url(pattern-circle.svg), url(background-desktop.png);
-
-  --font-inc: 'Inconsolata';
 }
 
 @layer base {
@@ -22,11 +20,19 @@
     lg:bg-[position:center,_right_top_5rem,_left_bottom,_left_5rem_top_-5rem,_right_30rem_center,_center]
     bg-[size:cover,_10rem,_25rem,_6rem,_6rem,_cover]
     md:bg-[size:cover,_20rem,_40rem,_10rem,_10rem,_cover]
-    lg:bg-[size:cover,_30rem,_50rem,_14rem,_14rem,_cover];
+    lg:bg-[size:cover,_30rem,_50rem,_14rem,_14rem,_cover]
+
+    font-mono;
   }
 
   h1 {
-    @apply text-white text-5xl flex text-center justify-center font-mono font-semibold;
+    @apply text-white text-5xl flex text-center justify-center font-semibold;
   }
 
+}
+
+@layer components {
+  .input{
+    @apply bg-gray-300/10 border-1 rounded-md h-12 w-md pl-4 mt-1 text-sm
+  }
 }
