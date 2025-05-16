@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import InfoIcon from './icons/InfoIcon.jsx'
+import Dropzone from './Dropzone.jsx'
 
 const Form = () => {
   const {
@@ -23,31 +24,7 @@ const Form = () => {
     >
       <div className="flex flex-col mb-5">
         <p>Upload Avatar</p>
-        <label
-          className="h-30 border-dashed border-1 border-violet-300 rounded-md w-md text-center
-        bg-gray-300/10 mt-1 flex items-center justify-center cursor-pointer flex-col"
-          htmlFor="upload"
-        >
-          <div className="border-[0.5px] border-violet-300 rounded-md p-2 bg-gray-500/40 mb-4">
-            <img src="/icon-upload.svg" alt="upload icon" />
-          </div>
-          <p className="text-gray-300 cursor-pointer">
-            Drag and drop or click to upload
-          </p>
-          <input
-            type="file"
-            name="upload"
-            id="upload"
-            accept=".jpg,.png"
-            hidden
-          />
-        </label>
-        <div className="flex w-md mt-2">
-          <img src="/icon-info.svg" alt="info icon" />
-          <p className="text-gray-200 text-[11px] ml-2">
-            Upload your photo (JPEG or PNG, max size: 500KB)
-          </p>
-        </div>
+        <Dropzone />
       </div>
       <div>
         <p>Full Name</p>
