@@ -36,13 +36,8 @@ const Dropzone = () => {
   }
 
   return (
-    <>
-      <div
-        {...getRootProps({
-          className:
-            'h-30 border-dashed border-1 border-violet-300 rounded-md w-md text-center bg-gray-300/10 mt-1 flex items-center justify-center cursor-pointer flex-col'
-        })}
-      >
+    <div {...getRootProps({})}>
+      <div className="h-30 border-dashed border-1 border-violet-300 rounded-md lg:w-md w-sm text-center bg-gray-300/10 mt-1 flex items-center justify-center cursor-pointer flex-col">
         <input {...getInputProps()} />
         {isDragActive ? (
           <p className="text-gray-300">Drop your avatar here ...</p>
@@ -75,7 +70,7 @@ const Dropzone = () => {
           </>
         )}
       </div>
-      <div className="flex w-md mt-2">
+      <div className="flex w-sm lg:w-md mt-2">
         {error ? (
           <>
             <InfoIcon color={'red'} />
@@ -90,7 +85,7 @@ const Dropzone = () => {
           </>
         )}
       </div>
-    </>
+    </div>
   )
 }
 

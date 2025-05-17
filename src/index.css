@@ -26,13 +26,13 @@
   }
 
   h1 {
-    @apply text-white text-5xl flex text-center justify-center font-semibold;
+    @apply text-white lg:text-5xl text-3xl flex text-center justify-center font-semibold;
   }
 
 }
 
 @layer components {
   .input{
-    @apply bg-gray-300/10 border-1 rounded-md h-12 w-md pl-4 mt-1 text-sm
+    @apply bg-gray-300/10 border-1 rounded-md h-12 lg:w-md pl-4 mt-1 text-sm w-sm
   }
 }

@@ -22,7 +22,7 @@ const Form = () => {
       className="text-white items-center flex flex-col"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className="flex flex-col mb-5">
+      <div className="mb-5 block">
         <p>Upload Avatar</p>
         <Dropzone />
       </div>
@@ -96,7 +96,7 @@ const Form = () => {
       </div>
 
       <input
-        className="border-1 rounded-md h-12 w-md bg-[#f67464] text-black cursor-pointer"
+        className="border-1 rounded-md h-12 lg:w-md w-sm bg-[#f67464] text-black cursor-pointer hover:bg-rose-300"
         type="submit"
         value="Generate My Ticket"
         disabled={!isValid}
