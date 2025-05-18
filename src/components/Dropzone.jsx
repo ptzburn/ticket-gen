@@ -3,17 +3,17 @@ import { useDropzone } from 'react-dropzone'
 import UploadIcon from './icons/UploadIcon.jsx'
 import InfoIcon from './icons/InfoIcon.jsx'
 
-const Dropzone = () => {
+const Dropzone = ({ onChange }) => {
   const [file, setFile] = useState(null)
   const [error, setError] = useState('')
 
   const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
     if (acceptedFiles?.length) {
-      setFile(
-        Object.assign(acceptedFiles[0], {
-          preview: URL.createObjectURL(acceptedFiles[0])
-        })
-      )
+      const droppedFile = Object.assign(acceptedFiles[0], {
+        preview: URL.createObjectURL(acceptedFiles[0])
+      })
+      setFile(droppedFile)
+      onChange(droppedFile)
       setError('')
     }
 
@@ -33,6 +33,7 @@ const Dropzone = () => {
 
   const removeFile = () => {
     setFile(null)
+    onChange(null)
   }
 
   return (

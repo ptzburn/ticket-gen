@@ -1,21 +1,40 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 import InfoIcon from './icons/InfoIcon.jsx'
 import Dropzone from './Dropzone.jsx'
+import { useNavigate } from 'react-router-dom'
 
 const Form = () => {
   const {
     register,
     handleSubmit,
+    control,
     reset,
     formState: { errors, isValid }
   } = useForm({
     mode: 'onBlur'
   })
+  const navigate = useNavigate()
 
-  const onSubmit = user => {
-    alert(JSON.stringify(user))
-    reset()
+  const onSubmit = data => {
+    // Prepare data for navigation (exclude raw file, pass metadata)
+    const formData = {
+      name: data.name,
+      email: data.email,
+      username: data.username,
+      avatar: data.avatar
+        ? {
+            name: data.avatar.name,
+            size: data.avatar.size,
+            type: data.avatar.type,
+            preview: data.avatar.preview // Pass preview URL for display
+          }
+        : null
+    }
+
+    // Navigate to result page with form data
+    navigate('/ticket', { state: formData })
+    reset() // Clear form after submission
   }
   return (
     <form
@@ -24,7 +43,16 @@ const Form = () => {
     >
       <div className="mb-5 block">
         <p>Upload Avatar</p>
-        <Dropzone />
+        <Controller
+          name="avatar"
+          control={control}
+          rules={{
+            required: true
+          }}
+          render={({ field: { onChange, value } }) => (
+            <Dropzone onChange={onChange} value={value} />
+          )}
+        />
       </div>
       <div>
         <p>Full Name</p>
