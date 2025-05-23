@@ -7,8 +7,10 @@ const TicketPage = () => {
 
   console.log(state)
 
-  // Clean up preview URL on unmount
   useEffect(() => {
+    if (localStorage.getItem('firstLoadDone') === null) {
+      localStorage.setItem('firstLoadDone', 1)
+    }
     return () => {
       if (state?.avatar?.preview) {
         URL.revokeObjectURL(state.avatar.preview)
@@ -16,7 +18,7 @@ const TicketPage = () => {
     }
   }, [state?.avatar?.preview])
 
-  if (!state) {
+  if (!state || localStorage.getItem('firstLoadDone') !== null) {
     return <Navigate to={'/'} />
   }
 

@@ -37,6 +37,6 @@
     @apply bg-gray-300/10 border-1 rounded-md h-12 lg:w-md pl-4 mt-1 text-sm w-sm
   }
   .ticket {
-    @apply bg-ticket bg-cover w-[600px] h-[280px] justify-between flex flex-col;
+    @apply bg-ticket bg-cover lg:w-[600px] lg:h-[280px] w-[390px] h-[182px] flex;
   }
 }

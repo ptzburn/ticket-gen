@@ -17,7 +17,6 @@ const Form = () => {
   const navigate = useNavigate()
 
   const onSubmit = data => {
-    // Prepare data for navigation (exclude raw file, pass metadata)
     const formData = {
       name: data.name,
       email: data.email,
@@ -27,14 +26,17 @@ const Form = () => {
             name: data.avatar.name,
             size: data.avatar.size,
             type: data.avatar.type,
-            preview: data.avatar.preview // Pass preview URL for display
+            preview: data.avatar.preview
           }
         : null
     }
 
-    // Navigate to result page with form data
+    if (localStorage.getItem('firstLoadDone') !== null) {
+      localStorage.removeItem('firstLoadDone')
+    }
+
     navigate('/ticket', { state: formData })
-    reset() // Clear form after submission
+    reset()
   }
   return (
     <form
