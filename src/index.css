@@ -3,10 +3,10 @@
 @import "tailwindcss";
 
 @theme {
-  --background-image-mobile: url(pattern-lines.svg), url(pattern-squiggly-line-top.svg), url(pattern-squiggly-line-bottom-mobile-tablet.svg), url(pattern-circle.svg), url(pattern-circle.svg), url(background-mobile.png);
-  --background-image-tablet: url(pattern-lines.svg), url(pattern-squiggly-line-top.svg), url(pattern-squiggly-line-bottom-mobile-tablet.svg), url(pattern-circle.svg), url(pattern-circle.svg),url(background-tablet.png);
-  --background-image-desktop: url(pattern-lines.svg), url(pattern-squiggly-line-top.svg), url(pattern-squiggly-line-bottom-desktop.svg), url(pattern-circle.svg), url(pattern-circle.svg), url(background-desktop.png);
-  --background-image-ticket: url(pattern-ticket.svg);
+  --background-image-mobile: url(.././public/pattern-lines.svg), url(.././public/pattern-squiggly-line-top.svg), url(.././public/pattern-squiggly-line-bottom-mobile-tablet.svg), url(.././public/pattern-circle.svg), url(.././public/pattern-circle.svg), url(.././public/background-mobile.png);
+  --background-image-tablet: url(.././public/pattern-lines.svg), url(.././public/pattern-squiggly-line-top.svg), url(.././public/pattern-squiggly-line-bottom-mobile-tablet.svg), url(.././public/pattern-circle.svg), url(.././public/pattern-circle.svg),url(.././public/background-tablet.png);
+  --background-image-desktop: url(.././public/pattern-lines.svg), url(.././public/pattern-squiggly-line-top.svg), url(.././public/pattern-squiggly-line-bottom-desktop.svg), url(.././public/pattern-circle.svg), url(.././public/pattern-circle.svg), url(.././public/background-desktop.png);
+  --background-image-ticket: url(.././public/pattern-ticket.svg);
 }
 
 @layer base {
