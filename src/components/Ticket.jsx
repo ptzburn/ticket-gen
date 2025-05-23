@@ -23,7 +23,7 @@ const Ticket = ({ name, username, avatar }) => {
           <img
             src={avatar.preview}
             alt="avatar"
-            className="lg:rounded-3xl lg:w-24 w-16 rounded-xl"
+            className="lg:rounded-3xl lg:w-24 w-16 lg:h-24 h-16 rounded-xl"
           />
           <div className="flex flex-col items-start ml-4">
             <h3 className="lg:text-2xl">{name}</h3>
