@@ -6,6 +6,7 @@
   --background-image-mobile: url(pattern-lines.svg), url(pattern-squiggly-line-top.svg), url(pattern-squiggly-line-bottom-mobile-tablet.svg), url(pattern-circle.svg), url(pattern-circle.svg), url(background-mobile.png);
   --background-image-tablet: url(pattern-lines.svg), url(pattern-squiggly-line-top.svg), url(pattern-squiggly-line-bottom-mobile-tablet.svg), url(pattern-circle.svg), url(pattern-circle.svg),url(background-tablet.png);
   --background-image-desktop: url(pattern-lines.svg), url(pattern-squiggly-line-top.svg), url(pattern-squiggly-line-bottom-desktop.svg), url(pattern-circle.svg), url(pattern-circle.svg), url(background-desktop.png);
+  --background-image-ticket: url(pattern-ticket.svg);
 }
 
 @layer base {
@@ -32,7 +33,10 @@
 }
 
 @layer components {
-  .input{
+  .input {
     @apply bg-gray-300/10 border-1 rounded-md h-12 lg:w-md pl-4 mt-1 text-sm w-sm
+  }
+  .ticket {
+    @apply bg-ticket bg-cover w-[600px] h-[280px] justify-between flex flex-col;
   }
 }

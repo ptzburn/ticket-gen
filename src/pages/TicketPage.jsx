@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Navigate, useLocation } from 'react-router-dom'
+import Ticket from '../components/Ticket.jsx'
 
 const TicketPage = () => {
   const { state } = useLocation()
@@ -22,36 +23,20 @@ const TicketPage = () => {
   const { name, email, username, avatar } = state
 
   return (
-    <div className="text-white text-center p-4">
-      <h2 className="text-2xl mb-4">Your Submitted Data</h2>
-      <div className="flex flex-col items-center">
-        <p>
-          <strong>Name:</strong> {name || 'N/A'}
-        </p>
-        <p>
-          <strong>Email:</strong> {email || 'N/A'}
-        </p>
-        <p>
-          <strong>GitHub Username:</strong> {username || 'N/A'}
-        </p>
-        {avatar ? (
-          <div className="mt-4">
-            <p>
-              <strong>Avatar:</strong> {avatar.name} (
-              {(avatar.size / 1000).toFixed(2)} KB, {avatar.type})
-            </p>
-            <img
-              src={avatar.preview}
-              alt="Avatar Preview"
-              className="max-h-[100px] max-w-[100px] mt-2"
-            />
-          </div>
-        ) : (
-          <p>
-            <strong>Avatar:</strong> None
-          </p>
-        )}
-      </div>
+    <div className="text-white text-center p-4 mt-20 flex justify-center items-center flex-col">
+      <h1 className="max-w-200 block">
+        Congrats,{' '}
+        <span className="bg-gradient-to-r from-[#f57b6c] to-white bg-clip-text text-transparent">
+          {name}
+        </span>
+        ! Your ticket is ready.
+      </h1>
+      <p className="text-gray-300 text-center items-center mt-10 max-w-100 mb-20">
+        We've emailed your ticket to{' '}
+        <span className="text-[#f57b6c]">{email}</span> and will send updates in
+        the run up to the event.
+      </p>
+      <Ticket name={name} username={username} avatar={avatar} />
     </div>
   )
 }
